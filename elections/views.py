@@ -31,6 +31,7 @@ def polls(request, poll_id):
     selection = request.POST['choice']
 
     try:
+        #choice = Choice.objects.get(poll_id = poll.id, candidate_id = selection)
         choice = Choice.objects.get(poll_id = poll.id, candidate_id = selection)
         choice.votes += 1
         choice.save()
